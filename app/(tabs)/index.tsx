@@ -6,6 +6,9 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+// Impor komponen Link dari expo-router
+import { Link } from 'expo-router';
+
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
@@ -20,6 +23,12 @@ export default function HomeScreen() {
         <ThemedText type="title">Selamat Datang!</ThemedText>
         <HelloWave />
       </ThemedView>
+
+      {/* Tambahkan tombol Link di sini */}
+      <Link href="/about" style={styles.link}>
+        <ThemedText type="link">Tekan Saya</ThemedText>
+      </Link>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -71,5 +80,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  // Tambahkan style untuk Link jika diperlukan
+  link: {
+    marginTop: 15,
   },
 });
